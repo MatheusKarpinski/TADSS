@@ -5,7 +5,7 @@
 
 - Relação e Trade-off: Embora distintos, alta latência pode reduzir o throughput. Otimizar para baixa latência (ex: sem cache) pode diminuir o throughput, e aumentar o throughput (ex: muitos pacotes em lote) pode aumentar a latência.
 
-- Analogia da Rodovia: Latência: Tempo que um carro leva para ir de A a B. Throughput: Número de carros que passam pelo pedágio por minuto.
+- Exemplo: Latência: Tempo que um carro leva para ir de A a B. Throughput: Número de carros que passam pelo pedágio por minuto.
 
 # Lei de Moore
 - A Lei de Moore é uma observação feita por Gordon Moore em 1965, cofundador da Intel, que prevê que o número de transistores em um chip dobra aproximadamente a cada dois anos, aumentando a capacidade de processamento e reduzindo custos. Essa regra exponencial impulsionou a tecnologia por décadas, resultando em dispositivos menores, mais rápidos e eficientes.
