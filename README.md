@@ -9,3 +9,21 @@
 
 # Lei de Moore
 - A Lei de Moore é uma observação feita por Gordon Moore em 1965, cofundador da Intel, que prevê que o número de transistores em um chip dobra aproximadamente a cada dois anos, aumentando a capacidade de processamento e reduzindo custos. Essa regra exponencial impulsionou a tecnologia por décadas, resultando em dispositivos menores, mais rápidos e eficientes.
+
+# Banco de Dados Relacional
+Um banco de dados relacional organiza dados em tabelas com linhas (registros) e colunas (atributos) interligadas, utilizando chaves primárias e estrangeiras para garantir a consistência. Baseado em SQL é ideal para transações estruturadas que exigem alta precisão e integridade, como sistemas financeiros e de inventário.
+- Tabelas (Relações): Estruturas que armazenam dados de entidades específicas.
+- Linhas (Registros/Tuplas): Cada entrada única em uma tabela.
+- Colunas (Campos/Atributos): Características do dado armazenado.
+- Chave Primária (PK): Identificador exclusivo para cada linha em uma tabela.
+- Chave Estrangeira (FK): Campo que vincula uma tabela a outra, criando um relacionamento.
+- SQL (Structured Query Language): Linguagem padrão para interagir com bancos relacionais.
+
+# Diferença entre Stack e Heap
+- Stack: é automática, rápida e organizada em LIFO (último a entrar, primeiro a sair) para dados locais e pequenos.
+- Heap: O Heap é maior, de acesso mais lento, usado para alocação dinâmica e exige gerenciamento manual (C/C++) ou Garbage Collector (Java/C#).
+
+# Tipos de Threads
+- Thread de Plataforma (Sistema Operacional)
+- Green Thread: Foco em dispositivos com 1 nucleo e é simulada pela aplicação
+- Virtual Threads
