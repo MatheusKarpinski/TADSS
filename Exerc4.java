@@ -19,7 +19,6 @@ public class Exerc4 {
         t3.start();
         t4.start();
     }
-
     static class Adicionar implements Runnable {
         @Override
         public void run() {
@@ -27,9 +26,7 @@ public class Exerc4 {
                 int valor = random.nextInt(100);
 
                 lista.add(valor);
-                System.out.println(Thread.currentThread().getName() +
-                        " adicionou: " + valor);
-
+                System.out.println(Thread.currentThread().getName() + " adicionou: " + valor);
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
@@ -38,7 +35,6 @@ public class Exerc4 {
             }
         }
     }
-
     static class Remover implements Runnable {
         @Override
         public void run() {
@@ -56,7 +52,6 @@ public class Exerc4 {
             }
         }
     }
-
     static class Impressão implements Runnable {
         @Override
         public void run() {
