@@ -20,7 +20,7 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 - SQL (Structured Query Language): Linguagem padrão para interagir com bancos relacionais.
 
 # Diferença entre Stack e Heap
-- Stack: é automática, rápida e organizada em LIFO (último a entrar, primeiro a sair) para dados locais e pequenos.
+- Stack: é automática, rápida e organizada em LIFO (último a entrar, primeiro a sair) para dados locais e pequenos / área de memoria da thread (variaveis locais e pilhas de chamada de funções)
 - Heap: O Heap é maior, de acesso mais lento, usado para alocação dinâmica e exige gerenciamento manual (C/C++) ou Garbage Collector (Java/C#).
 
 # Tipos de Threads
@@ -29,19 +29,9 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 - Virtual Threads
 
 # Diferença entre Thread de Plataforma (OS) e Thread Virtual (Coroutines)
- - Thread de Plataforma (OS):
-   - Mapeamento: Existe uma correspondência de um-para-um (1:1) com threads do SO.
-   - Custo: Alto. Criar e destruir threads de plataforma é caro, e cada uma consome uma quantidade significativa de memória (geralmente ~1MB de pilha).
-   - Escalabilidade: Limitada. Criar milhares de threads pode esgotar a memória do sistema.
-   - Bloqueio: Se uma thread fizer uma operação bloqueante (como leitura de banco de dados ou rede), a thread do SO fica bloqueada e não pode fazer mais nada.
-   - Uso Ideal: Tarefas pesadas de processamento (CPU-bound) que exigem núcleos de processador dedicados.
-  
- - Thread Virtual (Coroutines):
-   - Mapeamento: Mapeamento muitos-para-um (M:N). Milhões de threads virtuais podem ser mapeadas para um número pequeno de threads de plataforma (chamadas de carrier threads).
-   - Custo: Baixo. São objetos Java leves criados na heap, não no SO. A criação é muito rápida.
-   - Escalabilidade: Muito alta. Permite suportar milhões de tarefas simultâneas (concorrência) na mesma aplicação.
-   - Bloqueio: Quando uma thread virtual realiza uma operação I/O (bloqueante), a JVM desmonta a thread virtual da thread de plataforma, liberando-a para executar outra thread virtual. Quando o I/O termina, a thread virtual é retomada.
-   - Uso Ideal: Aplicações com alta carga de I/O (I/O-bound), como servidores web, chamadas de API, consultas SQL, onde a thread passa a maior parte do tempo esperando
+ - Thread de Plataforma (OS): São gerenciadas pelo sistema operacional, mais pesadas e com maior custo de criação e troca de contexto, mas oferecem paralelismo real.
+ - Threads Virtuais (Corrotinas): São leves e gerenciadas pela aplicação, permitindo grande escalabilidade com baixo custo, porém geralmente compartilham threads reais para execução.
+   
 # Diferença entre Paralelismo e Concorrência
 - Concorrência: é a estruturação e gerenciamento de múltiplas tarefas que progridem em períodos sobrepostos (alternando entre elas), frequentemente em um único núcleo. 
 - Paralelismo: é a execução física e simultânea de múltiplas tarefas ao mesmo tempo, exigindo múltiplos núcleos de CPU.
@@ -49,3 +39,13 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 # Diferença entre Mutex e Semaphore (semáforo)
 - Mutex: é um mecanismo de exclusão mútua (bloqueio) que garante que apenas uma thread acesse um recurso por vez.
 - Semáforo é um mecanismo de sinalização que gerencia o acesso a um número limitado de recursos (contador), permitindo que várias threads acessem simultaneamente.
+
+# Alguns conceitos importantes:
+Processo: um programa em execução
+Thread: um fluxo de execução dentro do processo
+Stack: área de memoria da thread (variaveis locais e pilhas de chamada de funções)
+Processo/thread daemon: processo ou thread que não tem fim
+Prioridade na thread: valor informado ao escalonador para ele tentar levar em conta
+Starvation: Thread que não consegue tempo de CPU
+Condição de corrida: O resultado final torna-se dependente da temporização imprevisível ("corrida") dos eventos, gerando comportamentos não determinísticos, corrupção de dados ou falhas de segurança
+Escalonador Cooperativo e Preemptivo (time slice): A principal diferença é o controle: no escalonamento preemptivo, o sistema operacional interrompe processos à força para dar vez a outros, garantindo responsividade. No cooperativo, o processo mantém a CPU até terminar ou ceder voluntariamente o controle, sendo ideal para sistemas embarcados simples, mas arriscado para multitarefa
