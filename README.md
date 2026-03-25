@@ -46,3 +46,6 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 - Concorrência: é a estruturação e gerenciamento de múltiplas tarefas que progridem em períodos sobrepostos (alternando entre elas), frequentemente em um único núcleo. 
 - Paralelismo: é a execução física e simultânea de múltiplas tarefas ao mesmo tempo, exigindo múltiplos núcleos de CPU.
 - A concorrência lida com várias coisas, o paralelismo faz várias coisas. 
+# Diferença entre Mutex e Semaphore (semáforo)
+- Mutex: é um mecanismo de exclusão mútua (bloqueio) que garante que apenas uma thread acesse um recurso por vez.
+- Semáforo é um mecanismo de sinalização que gerencia o acesso a um número limitado de recursos (contador), permitindo que várias threads acessem simultaneamente.
