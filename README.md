@@ -28,7 +28,7 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 - Green Thread: Foco em dispositivos com 1 nucleo e é simulada pela aplicação
 - Virtual Threads
 
-# Qual a diferença entre Thread de Plataforma (OS) e Thread Virtual (Coroutines)
+# Diferença entre Thread de Plataforma (OS) e Thread Virtual (Coroutines)
  - Thread de Plataforma (OS):
    - Mapeamento: Existe uma correspondência de um-para-um (1:1) com threads do SO.
    - Custo: Alto. Criar e destruir threads de plataforma é caro, e cada uma consome uma quantidade significativa de memória (geralmente ~1MB de pilha).
@@ -42,3 +42,7 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
    - Escalabilidade: Muito alta. Permite suportar milhões de tarefas simultâneas (concorrência) na mesma aplicação.
    - Bloqueio: Quando uma thread virtual realiza uma operação I/O (bloqueante), a JVM desmonta a thread virtual da thread de plataforma, liberando-a para executar outra thread virtual. Quando o I/O termina, a thread virtual é retomada.
    - Uso Ideal: Aplicações com alta carga de I/O (I/O-bound), como servidores web, chamadas de API, consultas SQL, onde a thread passa a maior parte do tempo esperando
+# Diferença entre Paralelismo e Concorrência
+- Concorrência: é a estruturação e gerenciamento de múltiplas tarefas que progridem em períodos sobrepostos (alternando entre elas), frequentemente em um único núcleo. 
+- Paralelismo: é a execução física e simultânea de múltiplas tarefas ao mesmo tempo, exigindo múltiplos núcleos de CPU.
+- A concorrência lida com várias coisas, o paralelismo faz várias coisas. 
