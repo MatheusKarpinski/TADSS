@@ -41,11 +41,11 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 - Semáforo é um mecanismo de sinalização que gerencia o acesso a um número limitado de recursos (contador), permitindo que várias threads acessem simultaneamente.
 
 # Alguns conceitos importantes:
-Processo: um programa em execução
-Thread: um fluxo de execução dentro do processo
-Stack: área de memoria da thread (variaveis locais e pilhas de chamada de funções)
-Processo/thread daemon: processo ou thread que não tem fim
-Prioridade na thread: valor informado ao escalonador para ele tentar levar em conta
-Starvation: Thread que não consegue tempo de CPU
-Condição de corrida: O resultado final torna-se dependente da temporização imprevisível ("corrida") dos eventos, gerando comportamentos não determinísticos, corrupção de dados ou falhas de segurança
-Escalonador Cooperativo e Preemptivo (time slice): A principal diferença é o controle: no escalonamento preemptivo, o sistema operacional interrompe processos à força para dar vez a outros, garantindo responsividade. No cooperativo, o processo mantém a CPU até terminar ou ceder voluntariamente o controle, sendo ideal para sistemas embarcados simples, mas arriscado para multitarefa
+- Processo: um programa em execução
+- Thread: um fluxo de execução dentro do processo
+- Stack: área de memoria da thread (variaveis locais e pilhas de chamada de funções)
+- Processo/thread daemon: processo ou thread que não tem fim
+- Prioridade na thread: valor informado ao escalonador para ele tentar levar em conta
+- Starvation: Thread que não consegue tempo de CPU
+- Condição de corrida: O resultado final torna-se dependente da temporização imprevisível ("corrida") dos eventos, gerando comportamentos não determinísticos, corrupção de dados ou falhas de segurança
+- Escalonador Cooperativo e Preemptivo (time slice): A principal diferença é o controle: no escalonamento preemptivo, o sistema operacional interrompe processos à força para dar vez a outros, garantindo responsividade. No cooperativo, o processo mantém a CPU até terminar ou ceder voluntariamente o controle, sendo ideal para sistemas embarcados simples, mas arriscado para multitarefa
