@@ -53,4 +53,13 @@ Um banco de dados relacional organiza dados em tabelas com linhas (registros) e 
 # 08/04/2026
 
 - Quais são as partes de um nucleo de um processador? Cache, Ula, Registradores, Clock
+  
 - Cache = memoization é uma técnica de otimização em programação usada para acelerar programas, armazenando os resultados de chamadas de funções dispendiosas e retornando o resultado em cache quando as mesmas entradas ocorrem novamente. É uma forma específica de cache, comumente usada em programação funcional e dinâmica para evitar cálculos repetidos.
+  
+- Cache Coerence Protocol MESI =
+Modified (Modificado - M): A linha de cache foi alterada e é exclusiva deste núcleo. O dado é diferente da memória principal.
+Exclusive (Exclusivo - E): A linha de cache está presente apenas neste núcleo, mas é idêntica à memória principal.
+Shared (Compartilhado - S): A linha de cache pode ser lida por múltiplos núcleos e é idêntica à memória principal.
+Invalid (Inválido - I): A linha de cache não contém dados válidos. 
+
+- Doug Lea -> Criou uma biblioteca para resolver questões cristicas e incorporou dentro do Java para resolver os problemas da programação concorrente
