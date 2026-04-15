@@ -63,3 +63,7 @@ Shared (Compartilhado - S): A linha de cache pode ser lida por múltiplos núcle
 Invalid (Inválido - I): A linha de cache não contém dados válidos. 
 
 - Doug Lea -> Criou uma biblioteca para resolver questões cristicas e incorporou dentro do Java para resolver os problemas da programação concorrente
+
+# 15/04/2026
+- Synchronized: Permite que apenas uma thread por vez execute aquela parte crítica
+- Prova semana que vem em dupla as 4 aulas
