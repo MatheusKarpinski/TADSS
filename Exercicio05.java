@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class TesteBancoFirmeza {
+public class Exercicio05 {
 
     // ============================================================
     // CONFIGURAÇÕES DO TESTE

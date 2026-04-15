@@ -1,7 +1,7 @@
 package produtorconsumidor;
 
 public class Cozinha {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         PilhaPratos sujos = new PilhaPratos(100);
         PilhaPratos escorredor = new PilhaPratos(10);
         PilhaPratos limpos = new PilhaPratos(100);
@@ -11,8 +11,15 @@ public class Cozinha {
         }
 
         System.out.println(sujos);
+        System.out.println(limpos);
 
         Lavador lavador = new Lavador(sujos, escorredor);
-        Thread.ofPlatform().start(lavador);
+        Thread l1 =Thread.ofPlatform().start(lavador);
+        Enxugador enxugador = new Enxugador(escorredor, limpos);
+        Thread e1 = Thread.ofPlatform().start(enxugador);
+        l1.join();
+        e1.join();
+        System.out.println(sujos);
+        System.out.println(limpos);
     }
 }
