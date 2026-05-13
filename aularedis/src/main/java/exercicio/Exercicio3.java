@@ -2,7 +2,7 @@ package exercicio;
 
 import redis.clients.jedis.RedisClient;
 
-public class Exercicio1 {
+public class Exercicio3 {
 
     public static void main(String[] args) {
         RedisClient redis = RedisClient.create("redis://localhost:6379");
