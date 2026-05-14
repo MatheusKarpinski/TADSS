@@ -8,7 +8,7 @@ public class Exercicio4 {
 
         Jedis redis = new Jedis("localhost", 6379);
 
-        redis.rpush("usuarios",
+        redis.rpush("usuarios:list",
                 "Matheus Karpinski",
                 "Vitor Machado Blume",
                 "Rhuan José Voltolini",
@@ -21,7 +21,7 @@ public class Exercicio4 {
                 "Ricardo"
         );
 
-        System.out.println("10 usuários adicionados!");
+        System.out.println("10 usuários adicionados");
 
         redis.close();
     }
