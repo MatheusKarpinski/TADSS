@@ -66,4 +66,3 @@ Invalid (Inválido - I): A linha de cache não contém dados válidos.
 
 # 15/04/2026
 - Synchronized: Permite que apenas uma thread por vez execute aquela parte crítica
-- Prova semana que vem em dupla as 4 aulas

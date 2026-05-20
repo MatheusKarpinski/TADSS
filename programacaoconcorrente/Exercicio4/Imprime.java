@@ -1,0 +1,23 @@
+import java.util.List;
+
+public class Imprime extends Thread {
+    private List<Integer> numeros;
+
+    public Imprime(List<Integer> numeros) {
+        this.numeros = numeros;
+    }
+
+    @Override
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            synchronized (numeros) {
+                System.out.println(numeros);
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
